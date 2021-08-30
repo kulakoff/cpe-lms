@@ -1,0 +1,18 @@
+{
+  "name": "snr_cpe_local_mirror",
+  "version": "1.0.0",
+  "description": "SNR CPE local mirror for custom updates",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anton.kulakoff",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.7",
+    "xmlbuilder": "^15.1.1"
+  }
+}
