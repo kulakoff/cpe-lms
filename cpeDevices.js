@@ -1,50 +1,47 @@
-require("dotenv").config();
-const ACTUAL_BUILD_TIME = process.env.ACTUAL_BUILD_TIME || null;
-const ACTUAL_FIRMWARE_VERSION = process.env.ACTUAL_FIRMWARE_VERSION || null;
-
-const CPE_Devices = {
-  // BuildtimeValue: "20201007",
-  buildTimeValue: ACTUAL_BUILD_TIME,
-  SNR_CPE_W4N: {
+const cpeDevices = {
+  // ACTUAL_BUILD_TIME: "20201007",
+  //   ACTUAL_BUILD_TIME: ACTUAL_BUILD_TIME,
+  "SNR-CPE-W4N": {
     forceUpdate: "0",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: "SNR-CPE-W4N-1.7.3.lanta-0710201413.bin",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-W4N-1.10.0.lanta.2112211701.bin",
   },
-  SNR_CPE_MD11: {
+  "SNR-CPE-MD1.1": {
     forceUpdate: "0",
-    // FirmwareVersion: "1.7.3.lanta-071020141",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: "SNR-CPE-MD1.1-1.7.3.lanta-0710201410.bin",
+    // // firmwareVersion: "1.7.3.lanta-071020141",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-MD1.1-1.10.0.lanta.2112211656.bin",
   },
-  SNR_CPE_MD2: {
-    forceUpdate: "1",
-    FirmwareVersion: "",
-    FileName: "",
-  },
-  SNR_CPE_ME1: {
+  "SNR-CPE-MD2": {
     forceUpdate: "0",
-    // FirmwareVersion: "1.7.3.lanta-0710201357",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: "SNR-CPE-ME1-1.7.3.lanta-0710201357.bin",
+    // firmwareVersion: "",
+    fileName: "SNR-CPE-MD2-1.10.0.lanta.2112211702-8f4c48cf.bin",
   },
-  SNR_CPE_ME2: {
+  "SNR-CPE-ME1": {
     forceUpdate: "0",
-    // FirmwareVersion: "1.7.3.lanta-2609200228",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: "SNR-CPE-ME2-1.7.3.lanta-2609200228",
+    // // firmwareVersion: "1.7.3.lanta-0710201357",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-ME1-1.10.0.lanta.2112211630.bin",
   },
-  SNR_CPE_ME2_Lite: {
+  "SNR-CPE-ME2": {
     forceUpdate: "0",
-    // FirmwareVersion: "1.7.3.lanta-0710201351",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: "SNR-CPE-ME2-Lite-1.7.3.lanta-0710201351.bin",
+    // // firmwareVersion: "1.7.3.lanta-2609200228",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-ME2-1.10.0.lanta.2112211628.bin",
   },
-  SNR_CPE_ME2_SFP: {
+  "SNR-CPE-ME2-Lite": {
     forceUpdate: "0",
-    // FirmwareVersion: "1.7.3.lanta-0710201350",
-    FirmwareVersion: ACTUAL_FIRMWARE_VERSION,
-    FileName: `SNR-CPE-ME2-SFP-1.7.3.lanta-0710201350.bin`,
+    // // firmwareVersion: "1.7.3.lanta-0710201351",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-ME2-Lite-1.10.0.lanta.2112211628.bin",
+  },
+  "SNR-CPE-ME2-SFP": {
+    forceUpdate: "0",
+    // // firmwareVersion: "1.7.3.lanta-0710201350",
+    // firmwareVersion: ACTUAL_FIRMWARE_VERSION,
+    fileName: "SNR-CPE-ME2-SFP-1.10.0.lanta.2112211631.bin",
   },
 };
 
-exports.CPE_Devices = CPE_Devices;
+// exports.cpeDevices = cpeDevices;
+module.exports = cpeDevices;

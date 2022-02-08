@@ -1,2 +1,28 @@
 # snr_cpe_local_mirror
-локальное зеркало для обновления на кастом прошивку SNR CPE for lanta-net.
+локальное зеркало для обновления  прошивок SNR CPE for lanta-net.
+
+Сделав статическую запись в DNS для домена "update.snr.systems". 
+Перенаправляем запросы от CPE на локальгное зеркало обновлений
+
+# Enviroments
+.env содерждит информацию о текущей актуальнйо версии ПО
+
+# Firmvare files
+Имена файлов с прошивками находятся в файле cpeDevices.js 
+
+# Пример строки запроса со стороны клиента    
+/update.xml?fw=20211221&version=1.10.0&mac=F8:F0:82:B0:C5:6B&ip=37.235.156.101&model=SNR-CPE-MD1.1&sn&customid
+
+Query String Splitter
+'fw':
+20211221
+'version':
+1.10.0
+'mac':
+F8:F0:82:B0:C5:6B
+'ip':
+37.235.156.101
+'model':
+SNR-CPE-MD1.1
+'sn':
+'customid':
