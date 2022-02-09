@@ -15,7 +15,7 @@ const builder = require("xmlbuilder");
 
 /**
  * Генерирует XML по шаблону
- * @param {{cpeModel,filename,firmwareVersion,buildTime, isForceUpdate}} 
+ * @param {{cpeModel,filename,firmwareVersion,buildTime, isForceUpdate}}
  * @returns xml from temoplate
  */
 const makeXmlFile = ({
@@ -27,10 +27,7 @@ const makeXmlFile = ({
 }) => {
   const outputXmlFile = builder
     .create("update")
-    .ele(
-      "url",
-      `${BASE_URL}/updates/last/${cpeModel}/${fileName}.zip`
-    )
+    .ele("url", `${BASE_URL}/updates/last/${cpeModel}/${fileName}.zip`)
     .up()
     .ele("version", firmwareVersion)
     .up()
@@ -49,9 +46,9 @@ const makeXmlFile = ({
 
 /**
  * Проверка запроса клиента, содержится ли в нем поле model. Соответствует ли его содержимое описанным моделям
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
  */
 const checkCpeModel = (req, res, next) => {
   try {
@@ -60,7 +57,6 @@ const checkCpeModel = (req, res, next) => {
       req.query.model &&
       Object.keys(CPE_DEVICES).some((i) => i === req.query.model);
     if (isValid) {
-      console.log("req ok");
       next();
     } else {
       throw error;
