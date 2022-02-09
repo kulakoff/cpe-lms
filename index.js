@@ -13,6 +13,11 @@ const app = express();
 const morgan = require("morgan");
 const builder = require("xmlbuilder");
 
+/**
+ * Генерирует XML по шаблону
+ * @param {{cpeModel,filename,firmwareVersion,buildTime, isForceUpdate}} 
+ * @returns xml from temoplate
+ */
 const makeXmlFile = ({
   cpeModel = "",
   fileName = "",
@@ -42,12 +47,14 @@ const makeXmlFile = ({
   return outputXmlFile;
 };
 
+/**
+ * Проверка запроса клиента, содержится ли в нем поле model. Соответствует ли его содержимое описанным моделям
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 const checkCpeModel = (req, res, next) => {
   try {
-    /**
-     * Проверка query звпроса,
-     * содержится ли ключ "model" и его значение соответствует допустиммо
-     */
     const isValid =
       req.query &&
       req.query.model &&
@@ -64,7 +71,7 @@ const checkCpeModel = (req, res, next) => {
   }
 };
 
-app.use(morgan("common"));
+app.use(morgan("common")); //включаем логирование
 app.set("x-powered-by", false); //disable x-powered-by Express
 app.set("trust proxy", true); //proxy pass enable
 
@@ -119,6 +126,6 @@ app.get("/update.xml", checkCpeModel, (req, res) => {
     res.sendStatus(500);
   }
 });
-// app.get("*", (req, res) => res.sendStatus(400));
+app.get("*", (req, res) => res.sendStatus(400));
 
 app.listen(PORT, () => console.log(`server run on port ${PORT}`));
