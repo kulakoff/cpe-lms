@@ -119,6 +119,6 @@ app.get("/update.xml", checkCpeModel, (req, res) => {
     res.sendStatus(500);
   }
 });
-// app.get("*", (req, res) => res.sendStatus(400));
+app.get("*", (req, res) => res.sendStatus(400));
 
 app.listen(PORT, () => console.log(`server run on port ${PORT}`));
