@@ -35,9 +35,11 @@ app.get("/update.xml", checkCpeModel, (req: Request, res: Response) => {
       case "SNR-CPE-W4N":
         sender(model);
         break;
+
       case "SNR-CPE-MD1.1":
         sender(model);
         break;
+
       case "SNR-CPE-ME1":
         sender(model);
         break;
@@ -55,7 +57,6 @@ app.get("/update.xml", checkCpeModel, (req: Request, res: Response) => {
         break;
 
       default:
-        console.log("incorrect request");
         res.sendStatus(400);
         break;
     }
