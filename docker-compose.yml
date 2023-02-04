@@ -1,10 +1,17 @@
 version: '3.8'
+
 services:  
-  api:    
-    build: ./docer   
-    container_name: api_backend    
-    ports:      
-      - '4000:4000'    
+  cpe-lm:    
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    container_name: cpe-lm    
     volumes:     
-      - ./dist:/dist      
-      - ./app/node_modules
+      - ./src:/home/node/app/src      
+      - ./nodemon.json:/home/node/app/nodemon.json
+    expose:
+      - '49090'
+    ports:
+      - '49090:49090'
+    command: npm run dev

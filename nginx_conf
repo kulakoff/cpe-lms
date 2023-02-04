@@ -7,11 +7,11 @@ server {
         client_max_body_size 50M;
 
 location / {
-	rewrite  ^/updates/oui$  http://185.149.243.124/updates/oui;    
-	proxy_pass http://localhost:49090;
+		rewrite  ^/updates/oui$  http://185.149.243.124/updates/oui;    
+		proxy_pass http://localhost:49090;
     	proxy_set_header Host $http_host;
     	proxy_set_header X-Real-IP $remote_addr;
     	proxy_set_header Client-IP $remote_addr;
-   	  proxy_set_header X-Forwarded-For $remote_addr;
+   	  	proxy_set_header X-Forwarded-For $remote_addr;
     	proxy_set_header X-Forwarded-Proto $scheme;
 }
