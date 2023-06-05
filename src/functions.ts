@@ -7,7 +7,7 @@ const BASE_URL = process.env.BASE_URL as string;
 /**
  * Генерирует XML по шаблону
  * @param {{cpeModel,filename,firmwareVersion,buildTime, isForceUpdate}}
- * @returns xml from temoplate
+ * @returns xml from template
  */
 export const makeXmlFile = ({
   cpeModel = "",
@@ -18,7 +18,7 @@ export const makeXmlFile = ({
 }) => {
   const outputXmlFile = builder
     .create("update")
-    .ele("url", `${BASE_URL}/updates/last/${cpeModel}/${fileName}.zip`)
+    .ele("url", `${BASE_URL}/updates/SNR/last/${cpeModel}/${fileName}.zip`)
     .up()
     .ele("version", firmwareVersion)
     .up()
