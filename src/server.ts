@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({path: ".env.production"});
 
 import express, { Request, Response } from "express";
 import { makeXmlFile } from "./functions";
@@ -13,7 +13,9 @@ const app = express();
 app.set("x-powered-by", false); //disable x-powered-by Express
 app.set("trust proxy", true); //proxy pass enable
 
-app.get("/update.xml", checkCpeModel, (req: Request, res: Response) => {
+app.get("/update.xml",
+    checkCpeModel,
+    (req: Request, res: Response) => {
   const { model } = req.query;
 
   /**
