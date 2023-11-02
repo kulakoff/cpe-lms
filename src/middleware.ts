@@ -5,15 +5,15 @@ import CPE_DEVICES from "./data.json";
  * Проверка запроса клиента, содержится ли в нем поле model. Соответствует ли его содержимое описанным моделям
  */
 export const checkCpeModel = (
-  req: Request,
-  res: Response,
-  next: NextFunction
+    req: Request,
+    res: Response,
+    next: NextFunction
 ) => {
   try {
     const isValid =
-      req.query &&
-      req.query.model &&
-      Object.keys(CPE_DEVICES).some((i) => i === req.query.model);
+        req.query &&
+        req.query.model &&
+        Object.keys(CPE_DEVICES).some((i) => i === req.query.model);
 
     if (isValid) {
       next();

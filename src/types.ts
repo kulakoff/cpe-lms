@@ -5,4 +5,5 @@ export type cpeModels =
   | "SNR-CPE-ME1"
   | "SNR-CPE-ME2"
   | "SNR-CPE-ME2-Lite"
-  | "SNR-CPE-ME2-SFP";
+  | "SNR-CPE-ME2-SFP"
+  | "SNR-CPE-ME2-SFP-Lite";
