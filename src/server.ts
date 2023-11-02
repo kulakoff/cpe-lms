@@ -26,6 +26,7 @@ app.get("/update.xml",
   const sender = (cpeModel: cpeModels) => {
     const xmlData = makeXmlFile({
       cpeModel,
+      buildTime: CPE_DEVICES[cpeModel].buildtime,
       fileName: CPE_DEVICES[cpeModel].fileName,
       isForceUpdate: CPE_DEVICES[cpeModel].forceUpdate,
     });

@@ -1,34 +1,42 @@
 {
   "SNR-CPE-W4N": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-W4N-1.10.9.lanta-2209231141.bin"
   },
   "SNR-CPE-MD1.1": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-MD1.1-1.10.9.lanta-2209231141.bin"
   },
   "SNR-CPE-MD2": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-MD2-1.10.9.lanta-2209231142.bin"
   },
   "SNR-CPE-ME1": {
     "forceUpdate": "0",
+    "buildtime": "20231020",
     "fileName": "SNR-CPE-ME1-1.10.9.lanta-2010231607.bin"
   },
   "SNR-CPE-ME2": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-ME2-1.10.9.lanta-2209231141.bin"
   },
   "SNR-CPE-ME2-Lite": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-ME2-Lite-1.10.9.lanta-2209231142.bin"
   },
   "SNR-CPE-ME2-SFP-Lite": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-ME2-SFP-Lite-1.10.9.lanta-2209231307.bin"
   },
   "SNR-CPE-ME2-SFP": {
     "forceUpdate": "0",
+    "buildtime": "20230922",
     "fileName": "SNR-CPE-ME2-SFP-1.10.9.lanta-2209231141.bin"
   }
 }
