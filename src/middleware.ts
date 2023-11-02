@@ -14,6 +14,7 @@ export const checkCpeModel = (
       req.query &&
       req.query.model &&
       Object.keys(CPE_DEVICES).some((i) => i === req.query.model);
+
     if (isValid) {
       next();
     } else {

@@ -8,7 +8,7 @@ interface XmlFileOptions {
   fileName: string,
   firmwareVersion?: string,
   buildTime :string,
-  isForceUpdate: "0"|"1",
+  isForceUpdate?: "0" | "1",
 }
 
 /**
@@ -22,8 +22,8 @@ interface XmlFileOptions {
  * @returns {Object} - The generated XML file.
  */
 export const makeXmlFile = ({
-  cpeModel = "",
-  fileName = "",
+  cpeModel,
+  fileName,
   firmwareVersion = ACTUAL_FIRMWARE_VERSION,
   buildTime,
   isForceUpdate = "0",

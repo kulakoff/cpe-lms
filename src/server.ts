@@ -3,7 +3,6 @@ require("dotenv").config({path: ".env.production"});
 import express, { Request, Response } from "express";
 import { makeXmlFile } from "./functions";
 import { checkCpeModel } from "./middleware";
-// import { cpeModels } from "./types";
 import CPE_DEVICES from "./data.json";
 import { cpeModels } from "./types";
 
@@ -24,11 +23,12 @@ app.get("/update.xml",
    * @param {String} cpeModel
    */
   const sender = (cpeModel: cpeModels) => {
+    const { buildtime, fileName, forceUpdate } = CPE_DEVICES[cpeModel];
     const xmlData = makeXmlFile({
       cpeModel,
-      buildTime: CPE_DEVICES[cpeModel].buildtime,
-      fileName: CPE_DEVICES[cpeModel].fileName,
-      isForceUpdate: CPE_DEVICES[cpeModel].forceUpdate,
+      buildTime: buildtime,
+      fileName: fileName,
+      isForceUpdate: forceUpdate,
     });
     res.header("Content-Type", "application/xml").status(200).send(xmlData);
   };
