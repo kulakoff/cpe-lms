@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "npx env-cmd -f .env.development ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev_2": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev_3": "NODE_ENV=development ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "npx env-cmd -f .env.production tsc -p ."
   },
   "author": "anton.kulakoff",
